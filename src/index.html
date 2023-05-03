@@ -3,12 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <title>Meditation Timer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Roboto+Mono:wght@700&family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="./js/timer.js"></script>
   </head>
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <div class="wrapper">
+      <div class="container inner">
+        <a class="logo" href="">
+          <svg class="logo__icon">
+            <use href="./images/icons/symbol-defs.svg#logo"></use>
+          </svg>
+          PurpleSchool
+        </a>
+
+        <p class="set-time">
+          Установить медитацию на
+          <input
+            class="input-time js-input-time"
+            type="number"
+            name="time"
+            value="10"
+            required
+          />
+          минут
+        </p>
+
+        <div class="timer js-timer">
+          <div class="value" data-value="mins">
+            <span id="min-tens">0</span>
+            <span id="min">0</span>
+          </div>
+
+          <span class="dots">:</span>
+
+          <div class="value" data-value="secs">
+            <span id="sec-tens">0</span>
+            <span id="sec">0</span>
+          </div>
+        </div>
+		
+        <button type="button" class="button" data-action="start-timer">
+          <svg class="button__icon">
+            <use href="./images/icons/symbol-defs.svg#play"></use>
+          </svg>
+          Запустить таймер
+        </button>
+      </div>
+    </div>
+
+    <!-- <include src="./partials/example.html"></include> -->
   </body>
 </html>
